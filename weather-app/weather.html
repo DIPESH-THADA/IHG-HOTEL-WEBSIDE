@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Dipesh Thada</title>
+    <!-- Linking google fonts for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <link rel="stylesheet" href="../weather-app/weather.css">
+</head>
+<body>
+    <div class="container">
+        <!-- search section -->
+        <div class="search-section">
+            <div class="input-wrapper">
+                <span class="material-symbols-rounded">search</span>
+                <input type="search" placeholder="Enter a city name" class="search-input">
+            </div>
+            <button class="location-button">
+                <img src="../weather-app/images/location.webp" width="30px" height="30px">
+            </button>
+        </div>
+
+        <!-- no result message -->
+        <div class="no-result">
+            <img src="../weather-app/images/no-result.webp" width="80px" height="80px" class="weather-icon">
+            <h3 class="title">Something went wrong!</h3>
+            <p class="message">we're unable to retrieve the weather details. Enure you've
+                enterned a valid city or try again later.
+            </p>
+        </div>
+
+        <!-- weather section -->
+        <div class="weather-section">
+            <!-- current weather -->
+            <div class="current-weather">
+                <img src="../weather-app/images/clear.webp" class="weather-icon">
+                <h2 class="tempreture">00<span>°C</span></h2>
+                <p class="description">Weather description</p>
+            </div>
+            <!-- hourly weather forecast list -->
+            <div class="hourly-weather">
+                <ul class="weather-list"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../weather-app/weather.js"></script>
+</body>
+</html>
