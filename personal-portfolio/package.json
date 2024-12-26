@@ -4,7 +4,7 @@
   "description": "learning bootstrap v5 with sass",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass scss:assets/css"
+    "compile:sass": "sass --watch scss:assets/css"
   },
   "keywords": [
     "bootstrap",
@@ -21,6 +21,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "autoprefix": "^1.0.1",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "personal-portfolio": "file:"
   }
 }
