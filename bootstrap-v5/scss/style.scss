@@ -1,0 +1,20 @@
+@use 'custom';
+
+// IMPORT THE COMPONENT
+
+@use 'component/animation';
+@use 'component/button';
+@use 'component/mixin';
+@use 'component/typography';
+
+// IMPORT THE SECTION
+
+@use 'section/navbar';
+@use 'section/intro-section';
+@use 'section/companies';
+@use 'section/services';
+@use 'section/testimonials';
+@use 'section/faq';
+@use 'section/portfolio';
+@use 'section/get-stated';
+@use 'section/footer';
