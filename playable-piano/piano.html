@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>playable piano</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../playable-piano/piano.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h2>Playable PIANO</h2>
+            <div class="columm volum-slider">
+                <span>Volumn</span> <input type="range">
+            </div>
+            <div class="columm keys-checkbox">
+                <span>Shows keys</span> <input type="checkbox" checked>
+            </div>
+        </header>
+        <ul class="piano-keys">
+            <li class="key white" data-key="c"><span>c</span></li>
+            <li class="key black" data-key="c#"><span>c#</span></li>
+            <li class="key white" data-key="d"><span>d</span></li>
+            <li class="key black" data-key="d#"><span>d#</span></li>
+            <li class="key white" data-key="e"><span>e</span></li>
+            <li class="key white" data-key="f"><span>f</span></li>
+            <li class="key black" data-key="f#"><span>f#</span></li>
+            <li class="key white" data-key="g"><span>g</span></li>
+            <li class="key black" data-key="g#"><span>g#</span></li>
+            <li class="key white" data-key="a"><span>a</span></li>
+            <li class="key black" data-key="a#"><span>a#</span></li>
+            <li class="key white" data-key="b"><span>b</span></li>
+            <li class="key white" data-key="c2"><span>c2</span></li>
+            <li class="key black" data-key="c#2"><span>c#2</span></li>
+            <li class="key white" data-key="d2"><span>d2</span></li>
+            <li class="key black" data-key="d#2"><span>d#2</span></li>
+            <li class="key white" data-key="e2"><span>e2</span></li>
+        </ul>
+    </div>
+
+    <script src="../playable-piano/piano.js"></script>
+</body>
+</html>
