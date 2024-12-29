@@ -1,6 +1,6 @@
 const pianoKeys = document.querySelectorAll(".piano-keys")
 
-let audio = new Audio("../playable-piano/tune/a.wav") //by defult, adio src is "a tune"
+let audio = new Audio("../playable-piano/tune/a#.wav") //by defult, adio src is "a tune"
 
 const playTune = (key) => {
     audio.src = `../playable-piano/tune/${key}.wav`; //passing audio src based on key pressed
