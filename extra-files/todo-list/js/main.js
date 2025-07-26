@@ -1,5 +1,52 @@
-import toDoList from "./todolist.js";
-import toDoItem from "./todoitem.js";
+class toDoList{
+    constructor() {
+          this._list = [];
+    }
+    getList(){
+          return this._list;
+    }
+
+    clearList(){
+          this._list = [];
+    }
+
+    addItemToList(itemObj){
+          this._list.push(itemObj);
+    }
+
+    removeItemFromList(id){
+          const list = this._list;
+          for(leti = 0; i < list.length; i++){
+                if(list[i]._id === id) {
+                      list.splice(i, 1);
+                      break;
+                }
+          }
+    } 
+} 
+
+class toDoItem{
+    constructor() {
+        this._id = null;
+        this._item = null;
+    }
+
+    getId(){
+        return this._id;
+    }
+
+    setId(id) {
+        this._id;
+    }
+
+    getitem(){
+        return this._item;
+    }
+
+    setItem(item) {
+        this._item = item;
+    }
+}
 
 
 const todolist = new toDoList();
