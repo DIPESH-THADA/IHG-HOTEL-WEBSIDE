@@ -90,6 +90,7 @@ a:hover {
 
 .header{
   margin-bottom: 50px;
+  background-color: var(--Neutral-200) !important;
 }
 
 .search-bar {
@@ -325,6 +326,10 @@ body.dark {
   /* color: var(--Neutral-200); */
 }
 
+body.dark .header {
+  background: var(dark-Gradient);
+}
+
 body.dark .extension-card {
   background: var(--Neutral-800);
   /* color: var(--Neutral-200); */
@@ -358,4 +363,82 @@ body.dark .btn.active {
   background: var(--Neutral-300);
 }
 
-/* Add your other styles below... */
+
+/* Mobile styles (375px and below) */
+@media (max-width: 375px) {
+  .search-bar,
+  .extension-list {
+    width: 100%;
+    margin: 10px auto;
+    padding: 0 8px;
+  }
+
+  .extensions-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    column-gap: 0;
+    margin-left: 0;
+  }
+
+  .extension-card {
+    height: auto;
+    padding: 10px;
+  }
+
+  .toggle {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+
+  .extension-title {
+    font-size: 1.1rem;
+  }
+
+  .btns {
+    gap: 5px;
+  }
+}
+  
+
+/* Desktop styles (1440px and above) */
+@media (min-width: 1440px) {
+  .extension-list,
+  .extensions-container {
+    max-width: 90%;
+    margin: 30px auto;
+    padding: 0 24px;
+  }
+  .extension-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  body{
+    background: var(--Light-Gradient);
+    height: 160vh;
+  }
+
+  .search-bar {
+    width: 87%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .extensions-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(3, 1fr));
+    column-gap: 15px;
+    row-gap: 15px;
+  }
+
+  .extension-card {
+    height: 200px;
+    padding: 24px;
+  }
+
+  .extension-title {
+    font-size: 2rem;
+  }
+}
+  
