@@ -1,0 +1,899 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+}
+body {
+  background: url('https://www.transparenttextures.com/patterns/church.png')
+    var(--light-color);
+}
+
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #00de21;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+  --font-size-base: 16px;
+  --font-size-lg: 1.25rem;
+  --font-size-sm: 0.875rem;
+  --border-radius: 1rem;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 3px 4px var(--success-color);
+  --light-dim-color: rgb(227, 227, 227);
+  --radient-color: `linear-gradient(
+      180deg,
+      var(var(--light-color)) 0%,
+      var(var(--success-color)) 100%
+    )
+    `;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.btn {
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: var(--font-size-base);
+  box-shadow: 0 2px 4px var(--success-color);
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 4px var(--primary-color);
+}
+
+header {
+  background-color: #f8f9fa;
+  background-image: url('https://www.transparenttextures.com/patterns/church.png');
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plus {
+  margin-right: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1.5rem;
+}
+
+.logo-img {
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links i {
+  position: relative;
+  font-size: 1.5rem;
+  color: var(--success-color);
+}
+
+/* .nav-links i::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--danger-color);
+  border-radius: 50%;
+  transition: var(--transition);
+  cursor: pointer;
+} */
+
+.nav-links i:hover {
+  color: var(--primary-color);
+}
+
+.nav-links i:hover::after {
+  background-color: var(--primary-color);
+}
+
+.search {
+  background-color: var(--light-color);
+  height: 50px;
+  width: 450px;
+  border: none;
+  box-shadow: 0 3px 4px var(--success-color);
+  border-radius: 25px;
+  position: relative;
+  margin-right: 80px;
+  display: flex;
+}
+
+.uil-search {
+  position: absolute;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+  width: 400px;
+  height: 45px;
+  font-size: var(--font-size-sm);
+  position: relative;
+  background-color: var(--light-color);
+  margin-left: 20px;
+  color: var(--success-color);
+}
+
+.menu-icon {
+  font-size: 2rem;
+  color: var(--success-color);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-right: 1.5rem;
+}
+
+.menu-icon:hover {
+  color: var(--danger-color);
+}
+
+.footer {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: var(--light-color);
+}
+
+.sidebar {
+  height: 100vh;
+  width: 20%;
+  background: url('https://www.transparenttextures.com/patterns/church.png')
+      repeat,
+    var(--light-color);
+  position: fixed;
+  top: 4.75rem;
+  bottom: 0;
+  left: 0;
+  gap: 1.5rem;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.5rem;
+  gap: 1rem;
+  color: var(--success-color);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.home:hover {
+  color: var(--primary-color);
+}
+
+.my-list {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  gap: 1rem;
+  color: var(--dark-color);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  transition: var(--transition);
+  cursor: pointer;
+  margin-top: 1rem;
+  color: var(--success-color);
+}
+
+.uil-pen {
+  margin-left: 8rem;
+}
+
+.my-list h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--success-color);
+}
+
+.my-list h3:hover {
+  color: var(--primary-color);
+}
+
+.my-list:hover {
+  color: var(--primary-color);
+}
+
+.list-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.grocery-lists {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+  margin-right: 1.5rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+}
+
+.count {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 8rem;
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+}
+
+.task-count {
+  display: block;
+}
+
+.grocery-list-header {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  gap: 1rem;
+  color: var(--success-color);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  transition: var(--transition);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.grocery-list-header:hover {
+  color: var(--primary-color);
+}
+
+.grocery-list h3 {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--success-color);
+  display: block;
+  transition: var(--transition);
+}
+
+.grocery-list h3:hover {
+  color: var(--primary-color);
+}
+
+.grocery-list-items {
+  margin-left: 2.5rem;
+  margin-top: 1rem;
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+}
+
+.count2 {
+  margin-left: 9.2rem;
+  margin-top: 1rem;
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+  gap: 1rem;
+  font-weight: 700;
+}
+
+.tags-header {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  gap: 1rem;
+  color: var(--success-color);
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  transition: var(--transition);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.tags-header:hover {
+  color: var(--primary-color);
+}
+
+.pens {
+  margin-left: 10rem;
+}
+
+.tag {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.tags-list {
+  margin-top: 1rem;
+  margin-left: 2.5rem;
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+  gap: 1rem;
+}
+
+.tag-count {
+  margin-left: 4.8rem;
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+  margin-top: 1rem;
+  font-weight: 700;
+  gap: 1rem;
+}
+
+.main {
+  margin-left: 20%;
+  background: url('https://www.transparenttextures.com/patterns/gravel.png')
+    #00de21;
+  min-height: 100vh;
+}
+
+.section-1 {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1.5rem;
+  align-items: center;
+}
+
+.input-feild {
+  height: 50px;
+  width: 550px;
+  border-radius: 20px;
+  background-color: var(--light-color);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+.input-feild input {
+  border: none;
+  outline: none;
+  color: var(--success-color);
+  margin-left: 10px;
+  height: 45px;
+  width: 350px;
+  background-color: var(--light-color);
+}
+
+.whole-food {
+  color: var(--light-color);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.member-photo {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.photos {
+  gap: 1px;
+  margin-top: 5px;
+}
+
+.three-dot {
+  height: 50px;
+  width: 80px;
+  background-color: var(--light-color);
+  border-radius: 25px;
+  margin-top: 30px;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--success-color);
+}
+
+/* =============== SECTION 2 ================= */
+.section2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-top: 30px;
+  margin-left: 25px;
+}
+
+/* ============= ITEMS ============ */
+.all-items {
+  /* display: flex;
+  justify-content: flex-start; */
+  background-color: var(--light-dim-color);
+  border-radius: 20px;
+  height: 80vh;
+}
+
+.favorites {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.favorites h3 {
+  color: var(--dark-color);
+  font-size: var(--font-size-lg);
+  margin-right: 250px;
+  font-weight: 700;
+}
+
+.angle {
+  display: flex;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.angle i {
+  padding: 3px 5px;
+  background: var(--secondary-color);
+  height: 25px;
+  color: var(--light-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.uil-angle-right {
+  margin-right: 30px;
+}
+
+.all {
+  color: var(--success-color);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* =========== FAVORITES =========== */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.favorite-items {
+  width: 170px;
+  height: 250px;
+  box-shadow: var(--box-shadow);
+  border-radius: 10px;
+  background-color: var(--light-color);
+  border: 0.8px solid var(--success-color);
+}
+
+.favorite-items i {
+  margin-top: 10px;
+  margin-left: 140px;
+  font-size: 20px;
+  color: var(--danger-color);
+}
+
+.favorite-items img {
+  width: 80px;
+  height: auto;
+  margin-left: 40px;
+  border-radius: 5px;
+}
+
+.description {
+  margin: 8px;
+}
+
+.price-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-name {
+  color: var(--success-color);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  display: block;
+}
+
+.price {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--success-color);
+}
+
+.item-description {
+  margin-top: 8px;
+  font-size: var(--font-size-sm);
+  color: var(--secondary-color);
+}
+
+.input-item {
+  width: 154px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.input-item input {
+  width: 30px;
+  height: 23px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  margin-left: 3px;
+  color: var(--success-color);
+  border-radius: 5px;
+  border: 0.2px solid var(--secondary-color);
+}
+
+.add {
+  width: 30px;
+  height: 22px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--light-color);
+  background-color: var(--success-color);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+hr {
+  height: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+
+/* =========== MY LIST =========== */
+.my-lists {
+  display: flex;
+  background-color: var(--light-dim-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 20px;
+  height: 80vh;
+  margin-right: 25px;
+  box-shadow: 3px 0 3px var(--success-color);
+}
+
+.my-lists h3 {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+}
+
+.fruits-vegitable {
+  color: var(--success-color);
+  font-size: var(--font-size-sm);
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+/* ============= all items ============= */
+/* ============== container-2 ============== */
+.grocery-items {
+  color: var(--success-color);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 40%;
+  margin-top: 30px;
+}
+
+.container2 {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.fruit-items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.fruit-items i {
+  color: var(--primary-color);
+}
+
+.fruit-item {
+  width: 170px;
+  height: 250px;
+  border: 0.8px solid var(--primary-color);
+  box-shadow: 0 1px 2px var(--primary-color);
+  border-radius: 10px;
+}
+
+.fruit-item span {
+  color: var(--primary-color);
+}
+
+.descriptions {
+  margin-top: 8px !important;
+  font-size: var(--font-size-sm) !important;
+  color: var(--secondary-color) !important;
+}
+
+.fruit-item button {
+  width: 30px;
+  height: 22px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--light-color);
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-right: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.fruit-item input {
+  margin-top: 10px;
+}
+
+.allitems {
+  margin-top: -30px;
+  background: url('https://www.transparenttextures.com/patterns/gravel.png')
+    #00de21;
+  height: 315vh;
+  margin-left: 20%;
+}
+
+.main2 {
+  margin: 20px;
+  background-color: var(--light-dim-color);
+  border-radius: 20px;
+}
+
+/* ============= vegitable ============ */
+.veg-items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.vegitable {
+  width: 170px;
+  height: 250px;
+  border: 0.8px solid var(--primary-color);
+  box-shadow: 0 1px 2px var(--primary-color);
+  border-radius: 10px;
+}
+
+.vegitable span {
+  color: var(--primary-color);
+}
+
+.descriptions {
+  margin-top: 8px !important;
+  font-size: var(--font-size-sm) !important;
+  color: var(--secondary-color) !important;
+}
+
+.vegitable button {
+  width: 30px;
+  height: 22px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--light-color);
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-right: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.vegitable input {
+  margin-top: 10px;
+}
+
+.vegitable i {
+  color: var(--primary-color);
+}
+
+.vegitable img {
+  width: 80px;
+  height: auto;
+  margin-left: 40px;
+  border-radius: 5px;
+}
+
+/* ================ RICE ITEMS ================ */
+.rice-items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.rice {
+  width: 170px;
+  height: 250px;
+  border: 0.8px solid var(--primary-color);
+  box-shadow: 0 1px 2px var(--primary-color);
+  border-radius: 10px;
+}
+
+.rice span {
+  color: var(--primary-color);
+}
+
+.rice button {
+  width: 30px;
+  height: 22px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--light-color);
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-right: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.rice input {
+  margin-top: 10px;
+}
+
+.rice i {
+  color: var(--primary-color);
+}
+
+.rice img {
+  width: 80px;
+  height: auto;
+  margin-left: 40px;
+  border-radius: 5px;
+}
+
+.rice img {
+  width: 80px;
+  height: auto;
+  margin-left: 40px;
+  border-radius: 5px;
+}
+
+/* ================ MEAT ITEMS ================ */
+.meat-items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.meat {
+  width: 170px;
+  height: 250px;
+  border: 0.8px solid var(--primary-color);
+  box-shadow: 0 1px 2px var(--primary-color);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.meat span {
+  color: var(--primary-color);
+}
+
+.meat button {
+  width: 30px;
+  height: 22px;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--light-color);
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-right: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.meat input {
+  margin-top: 10px;
+}
+
+.meat i {
+  color: var(--primary-color);
+}
+
+.meat img {
+  width: 80px;
+  height: auto;
+  margin-left: 40px;
+  border-radius: 5px;
+}
+
+.meat img {
+  width: 80px;
+  height: auto;
+  margin-left: 40px;
+  border-radius: 5px;
+}
+
+.svg {
+  background: url('https://www.transparenttextures.com/patterns/church.png')
+      repeat,
+    var(--light-color);
+  height: 100px;
+}
