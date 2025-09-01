@@ -1,0 +1,25 @@
+/* nav bar */
+nav h2 {
+  font-size: var(--font-size-lg);
+  color: var(--success-color);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+  margin-right: 3rem;
+}
+
+.nav-links i {
+  position: relative;
+  font-size: 1.5rem;
+  color: var(--success-color);
+}

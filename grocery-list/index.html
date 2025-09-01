@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" type="image/png" href="./items-image/grocery-logo.png" />
     <!-- =========== font ============= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,28 +20,29 @@
 
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <!-- <img src="./items-image/grocery-logo.jpg" alt="grocery-logo" class="logo-img"> -->
-                <button class="btn btn-new"><i class="uil uil-plus plus"></i>New</button>
+        <nav class="nav">
+            <div class="logo nav-link">
+                <img src="./image-preview/images.jpg" alt="grocery-logo" class="logo-img nav-link">
+                <button class="btn btn-new nav-link"><i class="uil uil-plus plus"></i>New</button>
             </div>
             <ul class="nav-links">
-                <div class="search">
-                    <input type="search" placeholder="search items">
+                <div class="search nav-link">
+                    <input type="search" placeholder="search items" class="nav-link">
                     <i class="uil uil-search"></i>
                 </div>
-                <i class="uil uil-refresh"></i>
-                <i class="uil uil-heart-alt"></i>
+                <i class="uil uil-refresh nav-link"></i>
+                <i class="uil uil-heart-alt nav-link"></i>
+                <a href="cart.html"><i class="uil uil-shopping-cart-alt nav-link"></i></a>
             </ul>
-            <div class="menu-icon">
-                <i class="uil uil-bars"></i>
+            <div class="menu-icon ">
+                <i class="uil uil-bars nav-link"></i>
             </div>
         </nav>
     </header>
 
     <div class="sidebar">
         <div class="home">
-            <i class="uil uil-home"></i>
+            <a class="link" href="grocery-lists"><i class="uil uil-home"></i></a>
             <span>Home</span>
         </div>
         <div class="list">
@@ -52,11 +54,13 @@
             <div class="list-items">
                 <div class="grocery-lists">
                     <span>All Tasks </span>
+                    <a class="link" href=".favorite-items">Favorites</a>
                     <span>Personal </span>
                     <span>Work </span>
                     <span>Shopping </span>
                 </div>
                 <div class="count">
+                    <span class="task-count">0</span>
                     <span class="task-count">0</span>
                     <span class="task-count">0</span>
                     <span class="task-count">0</span>
@@ -71,13 +75,15 @@
                 <h3>Grocery List</h3>
                 <i class="uil uil-pen"></i>
             </div>
-            <div class="list-items">
+            <div class="list-item">
                 <div class="grocery-list-items">
-                    <span>All Items</span>
-                    <span>Bakery</span>
-                    <span>Fruits</span>
-                    <span>Vegetables</span>
-                    <span>Dairy</span>
+                    <a class="link" href="">All Items</a>
+                    <a class="link" href=".grocery-items">Fruits</a>
+                    <a class="link" href=".veg-items">Vegetables</a>
+                    <a class="link" href=".rice-items">Rice</a>
+                    <a class="link" href=".meat-items">Meat</a>
+
+
                 </div>
                 <div class="count2">
                     <span class="task-count">0</span>
@@ -85,6 +91,7 @@
                     <span class="task-count">0</span>
                     <span class="task-count">0</span>
                     <span class="task-count">0</span>
+
                 </div>
             </div>
 
@@ -96,7 +103,7 @@
                 </div>
 
                 <div class="tag">
-                    <div class="tags-list">
+                    <div class="tag-list">
                         <span>All Tags </span>
                         <span>Urgent </span>
                         <span>Important </span>
@@ -111,6 +118,8 @@
                 </div>
 
             </div>
+
+
         </div>
     </div>
 
@@ -133,11 +142,11 @@
                 <span class="dot"></span>
             </div>
             <div class="view-all-items">
-                <div class="all-member"></div>
-                <div class="all-vegitable"></div>
-                <div class="all-rice"></div>
-                <div class="all-meat"></div>
-                <div class="all-fruits"></div>
+                <a href="" class="all-member">All Member</a>
+                <a href="" class="all-vegitable">All Vegitable Item</a>
+                <a href="" class="all-rice">All Rice Item</a>
+                <a href="" class="all-meat">All Meat Item</a>
+                <a href="" class="all-fruits">All Fruits Item</a>
             </div>
         </div>
 
@@ -175,62 +184,6 @@
                         </div>
                     </div>
 
-                    <div class="favorite-items">
-                        <i class="uil uil-heart"></i>
-                        <img src="./items-image/avocado.jpg" alt="avocado">
-                        <span class="line"></span>
-                        <div class="description">
-                            <div class="price-name">
-                                <span class="item-name">Avocado</span>
-                                <span class="price">$0</span>
-                            </div>
-                            <span class="item-description">🥑 A ripe avocado with dark green, bumpy skin and creamy
-                                light
-                                green flesh.</span>
-                            <div class="input-item">
-                                <input type="text">
-                                <button class="add">Add</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="favorite-items">
-                        <i class="uil uil-heart"></i>
-                        <img src="./items-image/avocado.jpg" alt="avocado">
-                        <span class="line"></span>
-                        <div class="description">
-                            <div class="price-name">
-                                <span class="item-name">Avocado</span>
-                                <span class="price">$0</span>
-                            </div>
-                            <span class="item-description">🥑 A ripe avocado with dark green, bumpy skin and creamy
-                                light
-                                green flesh.</span>
-                            <div class="input-item">
-                                <input type="text">
-                                <button class="add">Add</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="favorite-items">
-                        <i class="uil uil-heart"></i>
-                        <img src="./items-image/avocado.jpg" alt="avocado">
-                        <span class="line"></span>
-                        <div class="description">
-                            <div class="price-name">
-                                <span class="item-name">Avocado</span>
-                                <span class="price">$0</span>
-                            </div>
-                            <span class="item-description">🥑 A ripe avocado with dark green, bumpy skin and creamy
-                                light
-                                green flesh.</span>
-                            <div class="input-item">
-                                <input type="text">
-                                <button class="add">Add</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -239,10 +192,68 @@
             <div class="my-lists">
                 <div class="text">
                     <h3>My List</h3>
-                    <p class="fruits-vegitable">Fruits and Vegetables</p>
+                    <p class="fruits-vegitable">Fruits and Vegetables Items</p>
+                </div>
+                <div class="fruit-vegitable">
+                    <div class="text-description">
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>🥑 A ripe avocado with dark green, bumpy skin and creamy light green flesh.</p>
+                        </div>
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>🍌 eat bananas for Regulates Blood Sugar Levels. </p>
+                        </div>
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>Dragon fruit is high in fiber, which can help to regulate digestion and prevent
+                                constipation.
+                            </p>
+                        </div>
+
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>🍉 Watermelon provides various health benefits, including hydration and vitamin C.</p>
+                        </div>
+
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>Urinary health support digestive health benefits elevated endurance.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="fruit-vegitable">
+                    <p class="fruits-vegitable">Rice and Meat Items</p>
+                    <div class="text-description">
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>Basmati rice with long grain rice it's such a delicious.</p>
+                        </div>
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>Goat whole body you can make barbie cue and also gravy. </p>
+                        </div>
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>This brown rice is specially plant at the high hill area like manag mustang and humla.
+                            </p>
+                        </div>
+
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>Red beef meat is high protin source it is usually eat bodybuider.</p>
+                        </div>
+
+                        <div class="box">
+                            <i class="uil uil-circle"></i>
+                            <p>chicken brest is highly protine source meat it is also eat most of the bodybuider.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
     </div>

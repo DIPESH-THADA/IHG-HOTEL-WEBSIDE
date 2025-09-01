@@ -3,17 +3,10 @@ const currentYear = new Date().getFullYear();
 const date = document.getElementById('current-year');
 date.innerHTML = currentYear;
 
-const listItems = document.querySelector('.list-items');
 const countItems = document.querySelector('.count');
-const myList = document.querySelector('.my-list');
 const groceryListHeader = document.querySelector('.grocery-list-header');
 const tagHeader = document.querySelector('.tags-header');
 const fruitTags = document.querySelector('.item-name');
-
-myList.addEventListener('click', () => {
-  listItems.classList.toggle('.show');
-  console.log('i got click');
-});
 
 // ============== FRUIT ITEMS ===============
 
@@ -396,3 +389,228 @@ const renderMeat = items => {
 
 // 3. Initial render
 renderMeat(meatItems);
+
+// Calculate counts
+const groceryCounts = [
+  fruitItems.length + meatItems.length + riceItems.length + vegItems.length, // All Items
+  // each items
+  fruitItems.length,
+  meatItems.length,
+  riceItems.length,
+  vegItems.length,
+];
+
+// Update the count2 spans in grocery list
+const groceryListItems = document.querySelector('.grocery-list .list-item');
+const groceryCountSpans = groceryListItems.querySelectorAll(
+  '.count2 .task-count'
+);
+groceryCounts.forEach((count, i) => {
+  if (groceryCountSpans[i]) groceryCountSpans[i].textContent = count;
+});
+
+// 1. Favorites array
+let favorites = [];
+
+// 2. Render favorites container
+const renderFavorites = () => {
+  const favoritesContainer = document.querySelector('.container');
+  favoritesContainer.innerHTML = '';
+  favorites.forEach(item => {
+    const favDiv = document.createElement('div');
+    favDiv.classList.add('favorite-items');
+    favDiv.innerHTML = `
+      <i class="uil uil-heart"></i>
+      <img src="${item.image}" alt="${item.name}">
+      <span class="line"></span>
+      <div class="description">
+        <div class="price-name">
+          <span class="item-name">${item.name}</span>
+          <span class="price">${item.price}</span>
+        </div>
+        <span class="descriptions">${item.description}</span>
+        <div class="input-item">
+          <input type="text">
+          <button class="add">Add</button>
+        </div>
+      </div>
+    `;
+    favoritesContainer.appendChild(favDiv);
+  });
+};
+
+// 3. Add click event to heart icons in all items
+const addFavoriteListeners = () => {
+  // Fruit
+  document.querySelectorAll('.fruit-items .uil-heart').forEach((icon, idx) => {
+    icon.addEventListener('click', () => {
+      const item = fruitItems[idx];
+      if (!favorites.some(fav => fav.name === item.name)) {
+        favorites.push(item);
+        renderFavorites();
+      }
+    });
+  });
+  // Veg
+  document.querySelectorAll('.veg-items .uil-heart').forEach((icon, idx) => {
+    icon.addEventListener('click', () => {
+      const item = vegItems[idx];
+      if (!favorites.some(fav => fav.name === item.name)) {
+        favorites.push(item);
+        renderFavorites();
+      }
+    });
+  });
+  // Rice
+  document.querySelectorAll('.rice-items .uil-heart').forEach((icon, idx) => {
+    icon.addEventListener('click', () => {
+      const item = riceItems[idx];
+      if (!favorites.some(fav => fav.name === item.name)) {
+        favorites.push(item);
+        renderFavorites();
+      }
+    });
+  });
+  // Meat
+  document.querySelectorAll('.meat-items .uil-heart').forEach((icon, idx) => {
+    icon.addEventListener('click', () => {
+      const item = meatItems[idx];
+      if (!favorites.some(fav => fav.name === item.name)) {
+        favorites.push(item);
+        renderFavorites();
+      }
+    });
+  });
+};
+
+// 4. Call this after rendering all items
+renderFruits(fruitItems);
+renderveg(vegItems);
+renderRice(riceItems);
+renderMeat(meatItems);
+addFavoriteListeners();
+
+// make three dot dynamyc
+const threeDot = document.querySelector('.three-dot');
+const viewAllItems = document.querySelector('.view-all-items');
+
+threeDot.addEventListener('.click', () =>
+  viewAllItems.classList.toggle('show')
+);
+
+// ============ MAKE REFRESH BUTTON FUNCTIONAL =============
+const refreshIcon = document.querySelector('.uil-refresh');
+
+refreshIcon.addEventListener('click', () => {
+  window.location.reload();
+});
+
+// 1 add event listener to common parent element
+// 2 determine what element originated the event
+document
+  .querySelector('.grocery-list-items')
+  .addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log(e.target);
+    // matching strategy
+    if (e.target.classList.contains('link')) {
+      const id = e.target.getAttribute('href');
+      console.log(id);
+      document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+// lets add items at the cart
+// Cart logic
+let cart = [];
+const cartIcon = document.querySelector('.uil-shopping-cart-alt');
+
+// Create or update the cart count badge
+function updateCartCount() {
+  let badge = cartIcon.querySelector('.cart-count');
+  if (!badge) {
+    badge = document.createElement('span');
+    badge.className = 'cart-count';
+    badge.style.position = 'absolute';
+    badge.style.top = '-8px';
+    badge.style.right = '-12px';
+    badge.style.background = 'red';
+    badge.style.color = 'white';
+    badge.style.fontSize = '12px';
+    badge.style.width = '18px';
+    badge.style.height = '18px';
+    badge.style.borderRadius = '50%';
+    badge.style.display = 'flex';
+    badge.style.alignItems = 'center';
+    badge.style.justifyContent = 'center';
+    badge.style.zIndex = '10';
+    cartIcon.style.position = 'relative';
+    cartIcon.appendChild(badge);
+  }
+  badge.textContent = cart.length;
+  badge.style.display = cart.length > 0 ? 'flex' : 'none';
+}
+
+// Add event listeners to all "Add" buttons
+function addCartListeners() {
+  document.querySelectorAll('.add').forEach(btn => {
+    btn.addEventListener('click', function () {
+      // Find the item info
+      const itemDiv = btn.closest(
+        '.favorite-items, .fruit-item, .vegitable, .rice, .meat'
+      );
+      const name = itemDiv.querySelector('.item-name').textContent;
+      const price = itemDiv.querySelector('.price').textContent;
+      const image = itemDiv.querySelector('img').getAttribute('src');
+      // Add to cart (avoid duplicates, or allow multiple as you wish)
+      cart.push({ name, price, image });
+      updateCartCount();
+    });
+  });
+}
+
+// Call this after rendering all items
+addCartListeners();
+
+// add click event to the cart
+const cartStore = document.querySelector('.uil-shopping-cart-alt');
+cartStore.addEventListener('click', () => {
+  window.location.href = 'cart.html';
+});
+
+// menu fade animation
+const nav = document.querySelector('.nav');
+
+const handleHover = function (e) {
+  if (e.target.classList.contains('nav-link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav-link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+};
+
+// Passing "argument" into handler
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
+
+// sticky navigation
+const main = document.querySelector('.main');
+const navHeight = nav.getBoundingClientRect().height;
+const stickyNav = function (entries) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+};
+
+const observer = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+
+main && observer.observe(main);
