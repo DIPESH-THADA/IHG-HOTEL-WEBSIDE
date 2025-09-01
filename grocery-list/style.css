@@ -9,6 +9,10 @@ body {
     var(--light-color);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary-color: #007bff;
   --secondary-color: #6c757d;
@@ -81,10 +85,19 @@ header {
   position: sticky;
 }
 
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav.sticky {
+  position: fixed;
+  background: url('https://www.transparenttextures.com/patterns/church.png')
+    var(--light-color);
+  width: 100%;
+  padding: 1rem;
+  margin-top: -20px;
 }
 
 .plus {
@@ -117,7 +130,12 @@ nav {
   color: var(--success-color);
 }
 
-/* .nav-links i::after {
+nav h2 {
+  font-size: var(--font-size-lg);
+  color: var(--success-color);
+}
+
+.nav-links .uil-shopping-cart-alt::after {
   content: '';
   position: absolute;
   top: -5px;
@@ -128,7 +146,7 @@ nav {
   border-radius: 50%;
   transition: var(--transition);
   cursor: pointer;
-} */
+}
 
 .nav-links i:hover {
   color: var(--primary-color);
@@ -177,7 +195,7 @@ nav {
 }
 
 .menu-icon:hover {
-  color: var(--danger-color);
+  color: var(--primary-color);
 }
 
 .footer {
@@ -215,6 +233,11 @@ nav {
   font-weight: 700;
   transition: var(--transition);
   cursor: pointer;
+}
+
+.home a {
+  color: var(--success-color);
+  text-decoration: none;
 }
 
 .home:hover {
@@ -272,11 +295,21 @@ nav {
   font-size: var(--font-size-sm);
 }
 
+.grocery-lists a {
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+  transition: var(--transition);
+}
+
+.grocery-lists a:hover {
+  color: var(--primary-color);
+}
+
 .count {
-  margin-top: 1rem;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  /* gap: 0.5rem; */
   margin-left: 8rem;
   color: var(--secondary-color);
   font-size: var(--font-size-sm);
@@ -333,6 +366,16 @@ nav {
   font-weight: 700;
 }
 
+.grocery-list-items a {
+  display: block;
+  margin-top: 8px;
+  color: var(--secondary-color);
+}
+
+.task-count {
+  margin-top: 8px;
+}
+
 .tags-header {
   display: flex;
   flex-direction: row;
@@ -357,16 +400,20 @@ nav {
 
 .tag {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-right: 25px;
 }
 
-.tags-list {
+.tag-list {
   margin-top: 1rem;
   margin-left: 2.5rem;
   color: var(--secondary-color);
   font-size: var(--font-size-sm);
-  gap: 1rem;
+}
+
+.tag-list span {
+  display: block;
+  margin-top: 8px;
 }
 
 .tag-count {
@@ -376,6 +423,11 @@ nav {
   margin-top: 1rem;
   font-weight: 700;
   gap: 1rem;
+}
+
+.tag-count span {
+  margin-top: 8px;
+  display: block;
 }
 
 .main {
@@ -390,6 +442,7 @@ nav {
   justify-content: space-between;
   margin-right: 1.5rem;
   align-items: center;
+  margin-top: 40px;
 }
 
 .input-feild {
@@ -427,7 +480,7 @@ nav {
   width: 40px;
   height: auto;
   border-radius: 50%;
-  margin-right: 5px;
+  margin-right: 3px;
   cursor: pointer;
 }
 
@@ -472,7 +525,8 @@ nav {
   justify-content: flex-start; */
   background-color: var(--light-dim-color);
   border-radius: 20px;
-  height: 80vh;
+  min-height: 80vh;
+  margin-bottom: 30px;
 }
 
 .favorites {
@@ -513,11 +567,40 @@ nav {
   font-weight: 500;
 }
 
+.view-all-items {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  background: rgba(128, 128, 128, 0.779);
+  z-index: 1000;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.view-all-items {
+  display: none;
+}
+.view-all-items.show {
+  display: block;
+}
+
+.view-all-items a {
+  display: block !important;
+  margin-top: 15px;
+  margin-left: 20px;
+  color: var(--light-color) !important;
+  text-decoration: none;
+}
+
+.view-all-items a:hover {
+  color: var(--danger-color) !important;
+}
+
 /* =========== FAVORITES =========== */
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  gap: 8px;
   margin-left: 15px;
   margin-top: 20px;
 }
@@ -529,6 +612,7 @@ nav {
   border-radius: 10px;
   background-color: var(--light-color);
   border: 0.8px solid var(--success-color);
+  margin-bottom: 10px;
 }
 
 .favorite-items i {
@@ -616,7 +700,6 @@ hr {
 
 /* =========== MY LIST =========== */
 .my-lists {
-  display: flex;
   background-color: var(--light-dim-color);
   box-shadow: var(--box-shadow);
   border-radius: 20px;
@@ -634,9 +717,42 @@ hr {
 
 .fruits-vegitable {
   color: var(--success-color);
-  font-size: var(--font-size-sm);
+  font-size: 1rem;
   margin-left: 20px;
   margin-top: 8px;
+}
+
+.fruit-vegitable h4 {
+  font-size: 10px;
+  color: var(--primary-color);
+  margin-left: 15px;
+  margin-left: 15px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.box p {
+  color: var(--secondary-color);
+  font-size: var(--font-size-sm);
+}
+
+.box i {
+  color: var(--secondary-color);
+  font-size: var(--font-size-lg);
+}
+
+.text-description {
+  margin-left: 15px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
 /* ============= all items ============= */
@@ -896,4 +1012,24 @@ hr {
       repeat,
     var(--light-color);
   height: 100px;
+}
+
+.list-items {
+  display: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 30px;
+}
+.list-items.show {
+  display: block;
+}
+
+.list-item {
+  display: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 30px;
+}
+.list-item.show {
+  display: block;
 }
