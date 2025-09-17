@@ -4,12 +4,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="./image-folder/IHG-Logo.jpg" />
+
+    <!-- =========== font ============= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Karla:ital,wght@0,200..800;1,200..800&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ========= icons ======== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/solid.css">
     <title>Document</title>
 </head>
 
 <body>
 
+    <header>
+        <nav class="navbar">
+            <div class="left">
+                <ul>
+                    <li><a href="#" class="nav-item"><i class="uil uil-phone-alt"></i> +40 738 394 643</a></li>
+                    <li>
+                        <span class="nav-item">Chat with us</span>
+                    </li>
+                </ul>
+            </div>
+            </ul>
+
+            <div class="right">
+                <ul>
+                    <li class="language ">
+                        <i class="uil uil-globe"></i> <span class="nav-item">English</span><i
+                            class="uil uil-angle-down"></i>
+                    </li>
+                    <li class="my-stay">
+                        <a href="#"><i class="uil uil-bed-double"></i> <span class="nav-item">My Stay</span></a>
+                    </li>
+                    <li>
+                        <button class="join-btn nav-item">Join for free</button>
+                    </li>
+                    <li class="sign-in">
+                        <!-- <i class="uil uil-signin"></i> -->
+                        <span class="nav-item">Sign In</span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="second-header "><!-- ============= NAVBAR =============== -->
+            <div class="image">
+                <img src="./image-folder/IHG-Logo.jpg" alt="ihg-logo-nav" class="nav-link">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="./destination/destination.html" class="nav-link">Destination</a></li>
+                    <li><a href="./offer/offer.html" class="nav-link">Offers</a></li>
+                    <li><a href="#" class="nav-link">Meetings & Events</a></li>
+                    <li><a href="#" class="nav-link">Brands</a></li>
+                    <li><a href="#" class="nav-link">IHG® One Rewards</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============= MAIN =============== -->
+    <main class="main">
+        <section class="section1">
+            <div class="night">
+                <h6> Destination</h6>
+                <div class="location">
+                    <i class="uil uil-search"></i>
+                    <h5>London Victoria, United Kingdom</h5>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="night">
+                <h6>1 Night</h6>
+                <div class="location">
+                    <i class="uil uil-calendar-alt"></i>
+                    <h5>04/09/2025 ➔ 05/09/2025</h5>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="night">
+                <h6>Rooms & Guests</h6>
+                <div class="location">
+                    <h5>1 room, 1 guest</h5>
+                    <i class="uil uil-angle-down rooms-arrow"></i>
+                    <i class="uil uil-angle-up rooms-arrow-up" style="display:none;"></i>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="night">
+                <h6>Rate Preference</h6>
+                <div class="location">
+                    <h5>Best Available</h5>
+                    <i class="uil uil-angle-down"></i>
+                </div>
+            </div>
+
+            <button class="search-btn">SEARCH</button>
+        </section>
+
+        <!-- ============ MENU DROPDOWN ============ -->
+        <div class="dropdown">
+            <div class="dropdown-btn">
+                <h4>Rooms</h4>
+                <div class="add">
+                    <i class="uil uil-minus-circle"></i>
+                    <span>1</span>
+                    <i class="uil uil-plus-circle"></i>
+                </div>
+            </div>
+            <hr>
+
+            <div class="dropdown-btn">
+                <h4 class="dropdown-title">Adults</h4>
+                <div class="add">
+                    <i class="uil uil-minus-circle"></i>
+                    <span>1</span>
+                    <i class="uil uil-plus-circle"></i>
+                </div>
+            </div>
+
+            <div class="dropdown-btn">
+                <h4 class="dropdown-title">Children</h4>
+                <div class="add">
+                    <i class="uil uil-minus-circle"></i>
+                    <span>1</span>
+                    <i class="uil uil-plus-circle"></i>
+                </div>
+            </div>
+
+            <p class="age-info">Age of children may affect price at property</p>
+
+            <div class="dropdown-btn">
+                <h4 class="dropdown-title">Age of Child 1</h4>
+                <div class="add">
+                    <input type="number" min="0" max="17" value="0" class="child-age-input">
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="corporate-dropdown">
+            <div class="radio-btn">
+                <input type="radio" name="corporate" id="corporate">
+                <label for="corporate" class="corporate-label">Corporate/Promo Code</label>
+            </div>
+            <div class="corporate-id">
+                <p>Corporate ID ?</p>
+                <input type="text" class="corporate-input" placeholder="Enter Code">
+            </div>
+
+            <div class="travel-agent">
+                <p>Are you a travel agent?</p>
+                <label for="travel-agent" class="travel-agent-label">yes</label>
+            </div>
+        </div> -->
+
+        <section class="section2">
+            <h2 class="hotel">Select a Hotel</h2>
+            <div class="container">
+                <div class="view">
+                    <h4>View by</h4>
+                    <div class="map">
+                        <a href="https://maps.google.com"><i class="uil uil-map-marker"></i></a>
+                        <span>Map</span>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="view">
+                    <h4>Filtered By</h4>
+                    <div class="maps">
+                        <div class="map">
+                            <span>Amenities</span>
+                        </div>
+                        <div class="map">
+                            <span>Brands (All)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view">
+                    <h4>Short by</h4>
+                    <div class="distance">
+                        <span>Distance</span>
+                        <i class="uil uil-angle-down"></i>
+                    </div>
+                </div>
+
+                <div class="view">
+                    <h4>Pay With</h4>
+                    <div class="distance">
+                        <span>Money</span>
+                        <i class="uil uil-angle-down"></i>
+                    </div>
+                </div>
+
+                <div class="distance money">
+                    <span>RON</span>
+                    <i class="uil uil-angle-down"></i>
+                </div>
+            </div>
+        </section>
+
+        <div class="found">
+            <h4>2 Hotels found</h4>
+            <div class="fee">
+                <input type="checkbox" checked>
+                <p>Includes taxes and fees</p>
+            </div>
+        </div>
+
+        <img src="./image-folder/room.avif" alt="" class="bar">
+
+        <section class="section3">
+            <div class="container1">
+                <div class="hotel-card slider">
+                    <div class="slide1">
+                        <img src="./image-folder/Holiday-inn/image2.avif" alt="image1" class="hotel-image">
+                    </div>
+                    <div class="slide1">
+                        <img src="./image-folder/Holiday-inn/image3.avif" alt="image2" class="hotel-image">
+                    </div>
+                    <div class="slide1">
+                        <img src="./image-folder/Holiday-inn/image1.jpeg" alt="image3" class="hotel-image">
+                    </div>
+                    <div class="slide1">
+                        <img src="./image-folder/Holiday-inn/image2.jpeg" alt="image4" class="hotel-image">
+                    </div>
+                    <div class="slide1">
+                        <img src="./image-folder/Holiday-inn/image5.jpeg" alt="image5" class="hotel-image">
+                    </div>
+                    <button class="slider__btn slider__btn--left">&larr;</button>
+                    <button class="slider__btn slider__btn--right">&rarr;</button>
+                    <div class="dots"></div>
+                </div>
+                <!-- Hotel Info -->
+                <div class="hotel-info">
+                    <div class="hotel-info__header">
+                        <div class="hotel-header">
+                            <div class="header">
+                                <img src="./image-folder/Holiday/logo.webp" alt="" class="logo">
+                                <h2>Holiday Inn Express London - Victoria</h2>
+                            </div>
+                            <div class="contact">
+                                <span class="location">106-110 Belgrave Road, London SW1V 2BJ United Kingdom <span
+                                        class="lines"></span> 1 888 HOLIDAY (1 888 465 4329)</span>
+                            </div>
+                            <div class="rating">
+                                <span>⭐ ⭐ ⭐ ⭐</span>
+                                <span>1624 reviews</span>
+                                <div>
+                                    <i class="uil uil-map-marker-alt"></i>
+                                    <span>🏙️ 0.82 km (0.51mi) from city centre</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotel-description">
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="hotel-info__price">
+                        <div class="website">
+                            <i class="uil uil-store-alt"></i>
+                            <a href="https://www.holidayinn.com/">Hotel Website</a>
+                        </div>
+
+                        <div class="breakfast">
+                            <div class="features">
+                                <div class="cup">
+                                    <i class="uil uil-coffee"></i>
+                                    <span>Free Breakfast</span>
+                                </div>
+                                <div class="wifi">
+                                    <i class="uil uil-wifi"></i>
+                                    <span>Free WiFi</span>
+                                </div>
+                            </div>
+                            <div class="pets">
+                                <i class="uil uil-paw"></i>
+                                <span>🐕 Pets allowed</span>
+                            </div>
+                            <div class="fitness">
+                                <i class="uil uil-dumbbell"></i>
+                                <span>🏋️‍♂️Free Health/Fitness Centre</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div class="price">1,391 RON</div>
+                        <button class="btn-select">Select Hotel</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Cancellation Options</a></li>
+                    <li><a href="#">Safety Information</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="uil uil-facebook-f"></i></a>
+                    <a href="#"><i class="uil uil-twitter"></i></a>
+                    <a href="#"><i class="uil uil-instagram"></i></a>
+                    <a href="#"><i class="uil uil-linkedin-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span class="year"></span> Your Company. All rights reserved.</p>
+        </div>
+        <div class="back-to-top">
+            <a href=".main"><i class="uil uil-arrow-up"></i> Back to Top</a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
