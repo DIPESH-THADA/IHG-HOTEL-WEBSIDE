@@ -25,19 +25,21 @@ const roomsArrow = document.querySelector(".rooms-arrow");
 const dropdownDiv = document.querySelector(".dropdown");
 const roomsArrowUp = document.querySelector(".rooms-arrow-up");
 
-// Show dropdown with fade-in
-roomsArrow.addEventListener("click", function () {
-  dropdownDiv.classList.add("show");
-  roomsArrow.style.display = "none";
-  roomsArrowUp.style.display = "inline-block";
-});
+if (roomsArrow && dropdownDiv && roomsArrowUp) {
+  // Show dropdown with fade-in
+  roomsArrow.addEventListener("click", function () {
+    dropdownDiv.classList.add("show");
+    roomsArrow.style.display = "none";
+    roomsArrowUp.style.display = "inline-block";
+  });
 
-// Hide dropdown with fade-out
-roomsArrowUp.addEventListener("click", function () {
-  dropdownDiv.classList.remove("show");
-  roomsArrowUp.style.display = "none";
-  roomsArrow.style.display = "inline-block";
-});
+  // Hide dropdown with fade-out
+  roomsArrowUp.addEventListener("click", function () {
+    dropdownDiv.classList.remove("show");
+    roomsArrowUp.style.display = "none";
+    roomsArrow.style.display = "inline-block";
+  });
+}
 
 /* // Slider component
 const slider = function () {
@@ -328,181 +330,115 @@ const hotelInfo = [
   },
 ];
 
-// Render hotel info and slider
+// Render hotel info cards dynamically
 function displayHotelInfo(info) {
-  hotelInfoDiv.innerHTML = "";
-  info.forEach((hotel, idx) => {
-    const htmlDiv = document.createElement("div");
-    htmlDiv.innerHTML = `
-  <div class="container1">
-                <div class="hotel-card slider" id="slider-${idx}">
-                    <div class="slide1">
-                        <img src="${hotelInfo[idx].slide1}" alt="image1" class="hotel-image">
-                    </div>
-                    <div class="slide1">
-                        <img src="${hotelInfo[idx].slide2}" alt="image2" class="hotel-image">
-                    </div>
-                    <div class="slide1">
-                        <img src="${hotelInfo[idx].slide3}" alt="image4" class="hotel-image">
-                    </div>
-                    <div class="slide1">
-                        <img src="${hotelInfo[idx].slide4}" alt="image5" class="hotel-image">
-                    </div>
-                    <div class="slide1">
-                        <img src="${hotelInfo[idx].slide5}" alt="image5" class="hotel-image">
-                    </div>
-                    <button class="slider__btn slider__btn--left">&larr;</button>
-                    <button class="slider__btn slider__btn--right">&rarr;</button>
-                    <div class="dots"></div>
-                </div>
-                <!-- Hotel Info -->
-                <div class="hotel-info">
-                    <div class="hotel-info__header">
-                        <div class="hotel-header">
-                            <div class="header">
-                                <img src="${hotelInfo[idx].logo}" alt="" class="logo">
-                                <h2>${hotelInfo[idx].name}</h2>
-                            </div>
-                            <div class="contact">
-                                <span class="location">${hotelInfo[idx].location}</span>
-                            </div>
-                            <div class="rating">
-                                <span>⭐ ⭐ ⭐ ⭐</span>
-                                <span>1624 reviews</span>
-                                <div>
-                                    <i class="uil uil-map-marker-alt"></i>
-                                    <span>${hotelInfo[idx].address}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="hotel-description">
-                        <p>${hotelInfo[idx].description}</p>
-                    </div>
+  const hotelContainer = document.querySelector(".section3 .container");
+  if (!hotelContainer) return;
 
-                    <div class="hotel-info__price">
-                        <div class="website">
-                            <i class="uil uil-store-alt"></i>
-                            <a href="https://www.holidayinn.com/">${hotelInfo[idx].website}</a>
-                        </div>
+  hotelContainer.innerHTML = "";
 
-                        <div class="breakfast">
-                            <div class="features">
-                                <div class="cup">
-                                    <i class="uil uil-coffee"></i>
-                                    <span>${hotelInfo[idx].breakfast}</span>
-                                </div>
-                                <div class="wifi">
-                                    <i class="uil uil-wifi"></i>
-                                    <span>${hotelInfo[idx].wifi}</span>
-                                </div>
-                            </div>
-                            <div class="pets">
-                                <i class="uil uil-paw"></i>
-                                <span>🐕 ${hotelInfo[idx].pet}</span>
-                            </div>
-                            <div class="pets">
-                                <i class="uil uil-dumbbell"></i>
-                                <span>🏋️‍♂️ ${hotelInfo[idx].parking}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="price">
-                        <div class="price">${hotelInfo[idx].price}</div>
-                        <button class="btn-select">Select Hotel</button>
-                    </div>
-                </div>
+  info.forEach((hotel, index) => {
+    const card = document.createElement("div");
+    card.className = "card bg-white border mb-4 shadow-sm";
+
+    const slides = [
+      hotel.slide1,
+      hotel.slide2,
+      hotel.slide3,
+      hotel.slide4,
+      hotel.slide5,
+    ].filter(Boolean);
+    const carouselId = `hotelCarousel-${index}`;
+
+    const indicators = slides
+      .map(
+        (slide, slideIndex) =>
+          `<button type="button" data-bs-target="#${carouselId}" data-bs-slide-to="${slideIndex}" class="${
+            slideIndex === 0 ? "active" : ""
+          }" aria-current="${slideIndex === 0 ? "true" : "false"}" aria-label="Slide ${slideIndex + 1}"></button>`,
+      )
+      .join("");
+
+    const slideItems = slides
+      .map(
+        (slide, slideIndex) =>
+          `<div class="carousel-item ${slideIndex === 0 ? "active" : ""}">
+              <img src="${slide}" class="d-block w-100" alt="${hotel.name} image ${slideIndex + 1}" style="height: 280px; object-fit: cover;" />
+             </div>`,
+      )
+      .join("");
+
+    card.innerHTML = `
+      <div class="row g-0 align-items-center">
+        <div class="col-md-5">
+          <div id="${carouselId}" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              ${indicators}
             </div>
+            <div class="carousel-inner">
+              ${slideItems}
             </div>
-
-
+            <button class="carousel-control-prev" type="button" data-bs-target="#${carouselId}" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#${carouselId}" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <img src="${hotel.logo}" alt="${hotel.name} logo" style="height: 28px; margin-right: 10px; object-fit: contain;" />
+              <h3 class="card-title mb-0">${hotel.name}</h3>
             </div>
+            <p class="mb-1"><i class="uil uil-map-marker-alt"></i> ${hotel.location}</p>
+            <p class="mb-2"><i class="uil uil-phone-alt"></i> ${hotel.location.includes("1 888") ? hotel.location.split(" ").slice(-4).join(" ") : ""}</p>
+            <div class="mb-2">
+              <span class="text-warning">${"★".repeat(Math.round(hotel.rating))}</span>
+              <span class="ms-2 text-muted">${hotel.rating} (${hotel.address})</span>
+            </div>
+            <div class="mb-3 d-flex flex-wrap gap-2">
+              <span class="badge bg-success">${hotel.breakfast}</span>
+              <span class="badge bg-success">${hotel.wifi}</span>
+              <span class="badge bg-info">${hotel.parking}</span>
+              <span class="badge bg-info">${hotel.pet}</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h4 class="text-danger mb-1">${hotel.price}</h4>
+                <a href="https://${hotel.website}" target="_blank" class="text-decoration-none">${hotel.website}</a>
+              </div>
+              <button class="btn btn-danger btn-lg">Select Hotel</button>
+            </div>
+          </div>
+        </div>
+      </div>
     `;
-    hotelInfoDiv.appendChild(htmlDiv);
 
-    // Initialize slider for this hotel
-    initSlider(`#slider-${idx}`);
+    hotelContainer.appendChild(card);
   });
 }
 
-// Slider initialization for a specific slider
-function initSlider(selector) {
-  const sliderEl = document.querySelector(selector);
-  if (!sliderEl) return;
-  const slides = sliderEl.querySelectorAll(".slide1");
-  const btnLeft = sliderEl.querySelector(".slider__btn--left");
-  const btnRight = sliderEl.querySelector(".slider__btn--right");
-  const dotContainer = sliderEl.querySelector(".dots");
-  let curSlide = 0;
-  const maxSlide = slides.length;
-
-  // Create dots
-  dotContainer.innerHTML = "";
-  slides.forEach((_, i) => {
-    dotContainer.insertAdjacentHTML(
-      "beforeend",
-      `<button class="dots__dot" data-slide="${i}"></button>`
-    );
-  });
-
-  // Activate dot
-  function activateDot(slide) {
-    dotContainer
-      .querySelectorAll(".dots__dot")
-      .forEach((dot) => dot.classList.remove("dots__dot--active"));
-    dotContainer
-      .querySelector(`.dots__dot[data-slide="${slide}"]`)
-      .classList.add("dots__dot--active");
-  }
-
-  // Go to slide
-  function goToSlide(slide) {
-    slides.forEach(
-      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
-    );
-  }
-
-  // Next slide
-  function nextSlide() {
-    curSlide = curSlide === maxSlide - 1 ? 0 : curSlide + 1;
-    goToSlide(curSlide);
-    activateDot(curSlide);
-  }
-
-  // Previous slide
-  function prevSlide() {
-    curSlide = curSlide === 0 ? maxSlide - 1 : curSlide - 1;
-    goToSlide(curSlide);
-    activateDot(curSlide);
-  }
-
-  // Initial setup
-  goToSlide(0);
-  activateDot(0);
-
-  // Event listeners
-  btnRight.addEventListener("click", nextSlide);
-  btnLeft.addEventListener("click", prevSlide);
-  dotContainer.addEventListener("click", function (e) {
-    if (e.target.classList.contains("dots__dot")) {
-      curSlide = Number(e.target.dataset.slide);
-      goToSlide(curSlide);
-      activateDot(curSlide);
-    }
-  });
+// render data now
+if (Array.isArray(hotelInfo) && hotelInfo.length) {
+  displayHotelInfo(hotelInfo);
 }
-
-displayHotelInfo(hotelInfo);
 
 // ================= BACK TO TOP =====================
-
-document
-  .querySelector(".back-to-top a")
-  .addEventListener("click", function (e) {
+const backToTop = document.querySelector(".back-to-top a");
+if (backToTop) {
+  backToTop.addEventListener("click", function (e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+}
 
 // =============== CURRENT YEAR =====================
-const yearEl = document.querySelector(".year");
-const currentYear = new Date().getFullYear();
-yearEl.textContent = currentYear;
+const yearEl = document.querySelector("#year");
+if (yearEl) {
+  const currentYear = new Date().getFullYear();
+  yearEl.textContent = currentYear;
+}
