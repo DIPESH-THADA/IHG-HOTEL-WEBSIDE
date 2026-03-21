@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="./image-folder/IHG-Logo.jpg" />
+
+    <!-- =========== font ============= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Karla:ital,wght@0,200..800;1,200..800&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- ========= icons ======== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/solid.css">
+    <title>IGH HOTEL WEBSITE</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- Top Navbar -->
+        <nav class="navbar top_navbar navbar-expand-lg py-1" style="border-bottom: 1px solid #29485b;">
+            <div class="container-fluid">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link text-light" href="#"><i class="uil uil-phone-alt"></i> +40 738 394 643</a>
+                    <span class="nav-link text-light">Chat with us</span>
+                </div>
+                <div class="navbar-nav ">
+                    <a class="nav-link dropdown-toggle text-light" href="#" id="languageDropdown" role="button"
+                        data-bs-toggle="dropdown">
+                        <i class="uil uil-globe"></i> English
+                    </a>
+                    <select class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <option><a class="dropdown-item" href="#">English</a></option>
+                        <option><a class="dropdown-item" href="#">Spanish</a></option>
+                        <option><a class="dropdown-item" href="#">French</a></option>
+                    </select>
+                    <a class="nav-link text-light" href="#"><i class="uil uil-bed-double"></i> My Stay</a>
+                    <button class="join-btn me-2">Join for free</button>
+                    <button class="sign-in"> <a class="nav-link" href="#">Sign In</a></button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Navbar -->
+        <nav class="navbar second-header navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./image-folder/IHG-Logo.jpg" alt="IHG Logo" height="70">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto menu">
+                        <li class="nav-item">
+                            <a class="nav-link " href="./destination/destination.html">Destination</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="./offer/offer.html">Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="./meeting/meeting.html">Meetings & Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="./brands/brands.html">Brands</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="./reward/reward.html">IHG® One Rewards</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============= MAIN =============== -->
+    <main class="main">
+        <section class="py-5 bg-white section1">
+            <div class="container flex">
+                <div class="row align-items-end g-3 flex">
+                    <div class="night col-md-2">
+                        <h6> Destination</h6>
+                        <div class="location">
+                            <i class="uil uil-search"></i>
+                            <h5>London Victoria, United Kingdom</h5>
+                        </div>
+                    </div>
+
+                    <span class="divider"></span>
+
+                    <div class="night col-md-2">
+                        <h6>1 Night</h6>
+                        <div class="location">
+                            <i class="uil uil-calendar-alt"></i>
+                            <h5>04/09/2025 ➔ 05/09/2025</h5>
+                        </div>
+                    </div>
+
+                    <span class="divider"></span>
+
+                    <div class="col-md-2 night">
+                        <label class="form-label">Rooms & Guests</label>
+                        <select class="form-select form-select-md">
+                            <option selected class="option">1 room, 1 guest</option>
+                            <option class="option">2 rooms, 2 guests</option>
+                            <option class="option">3 rooms, 4 guests</option>
+                        </select>
+                    </div>
+
+                    <span class="divider"></span>
+
+                    <div class="col-md-2 night">
+                        <label class="form-label">Rate Preference</label>
+                        <select class="form-select form-select-md">
+                            <option selected class="option">Best Available</option>
+                            <option class="option">Lowest Price</option>
+                            <option>Best Rating</option>
+                        </select>
+                    </div>
+
+                    <span class="divider"></span>
+
+                    <div class="col-md-2">
+                        <button class="search-btn btn-lg w-100">SEARCH</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-4 bg-light section2">
+            <div class="container">
+                <h2 class="text-center mb-4 text-dark">Select a Hotel</h2>
+                <div class="row">
+                    <div class="col-md-3 view">
+                        <h4 class="text-dark">View by</h4>
+                        <div class="d-flex align-items-center ">
+                            <a href="https://maps.google.com" class="btn btn-outline-dark me-2">
+                                <i class="uil uil-map-marker"></i> Map
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 view">
+                        <h4 class="text-dark">Filtered By</h4>
+                        <div class="btn-group-vertical">
+                            <div class="maps">
+                                <button class="btn btn-outline-dark">Amenities</button>
+                                <button class="btn btn-outline-dark">Brands (All)</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="text-dark">Sort by</h4>
+                        <div class="dropdown dropdown-title">
+                            <button class="btn  dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                Distance
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Distance</a></li>
+                                <li><a class="dropdown-item" href="#">Price</a></li>
+                                <li><a class="dropdown-item" href="#">Rating</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4 class="text-dark">Pay With</h4>
+                        <div class="dropdown dropdown-title">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                RON
+                            </button>
+                            <ul class="dropdown-menu ">
+                                <li><a class="dropdown-item" href="#">RON</a></li>
+                                <li><a class="dropdown-item" href="#">USD</a></li>
+                                <li><a class="dropdown-item" href="#">EUR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-light py-3" style="border-bottom: 1px solid #ddd;">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center found">
+                        <h4 class="text-dark">2 Hotels found</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" checked>
+                            <label class="form-check-label text-dark">Includes taxes and fees</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-4 bar">
+                <img src="./image-folder/room.avif" alt="Room" class="img-fluid mb-4">
+            </div>
+        </section>
+
+        <section class="py-4 section3">
+            <div class="container">
+                <div class="card bg-light text-dark border">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div id="hotelCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="./image-folder/Holiday-inn/image2.avif" class="d-block w-100"
+                                            alt="Hotel Image 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./image-folder/Holiday-inn/image3.avif" class="d-block w-100"
+                                            alt="Hotel Image 2">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./image-folder/Holiday-inn/image1.jpeg" class="d-block w-100"
+                                            alt="Hotel Image 3">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./image-folder/Holiday-inn/image2.jpeg" class="d-block w-100"
+                                            alt="Hotel Image 4">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="./image-folder/Holiday-inn/image5.jpeg" class="d-block w-100"
+                                            alt="Hotel Image 5">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#hotelCarousel"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#hotelCarousel"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="./image-folder/Holiday/logo.webp" alt="Logo" class="me-2"
+                                        style="height: 40px;">
+                                    <h2 class="card-title text-dark">Holiday Inn Express London - Victoria</h2>
+                                </div>
+                                <p class="card-text mb-2 text-dark">
+                                    <i class="uil uil-map-marker-alt me-1"></i>
+                                    106-110 Belgrave Road, London SW1V 2BJ United Kingdom
+                                </p>
+                                <p class="card-text mb-2 text-dark">
+                                    <i class="uil uil-phone-alt me-1"></i>
+                                    1 888 HOLIDAY (1 888 465 4329)
+                                </p>
+                                <div class="mb-2">
+                                    <span class="text-warning">⭐ ⭐ ⭐ ⭐</span>
+                                    <span class="ms-2 text-dark">1624 reviews</span>
+                                </div>
+                                <p class="card-text mb-3 text-dark">
+                                    <i class="uil uil-map-marker-alt me-1"></i>
+                                    0.82 km (0.51mi) from city centre
+                                </p>
+                                <div class="mb-3">
+                                    <div class="d-flex flex-wrap gap-2 mb-2">
+                                        <span class="badge bg-success"><i class="uil uil-coffee me-1"></i>Free
+                                            Breakfast</span>
+                                        <span class="badge bg-success"><i class="uil uil-wifi me-1"></i>Free WiFi</span>
+                                        <span class="badge bg-info"><i class="uil uil-paw me-1"></i>Pets allowed</span>
+                                        <span class="badge bg-info"><i class="uil uil-dumbbell me-1"></i>Free
+                                            Health/Fitness Centre</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h3 class="text-danger mb-0">1,391 RON</h3>
+                                        <a href="https://www.holidayinn.com/" class="text-decoration-none text-dark">
+                                            <i class="uil uil-store-alt me-1"></i>Hotel Website
+                                        </a>
+                                    </div>
+                                    <button class="btn btn-danger btn-lg">Select Hotel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Room Selection Modal -->
+    <div class="modal fade" id="roomModal" tabindex="-1" aria-labelledby="roomModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-light text-dark">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="roomModalLabel">Select Rooms & Guests</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Rooms</label>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary" type="button">-</button>
+                            <input type="text" class="form-control text-center" value="1" readonly>
+                            <button class="btn btn-outline-secondary" type="button">+</button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Adults</label>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary" type="button">-</button>
+                            <input type="text" class="form-control text-center" value="1" readonly>
+                            <button class="btn btn-outline-secondary" type="button">+</button>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Children</label>
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary" type="button">-</button>
+                            <input type="text" class="form-control text-center" value="0" readonly>
+                            <button class="btn btn-outline-secondary" type="button">+</button>
+                        </div>
+                        <div class="form-text">Age of children may affect price at property</div>
+                    </div>
+                    <div class="mb-3" id="childAgeContainer" style="display: none;">
+                        <label class="form-label">Age of Child 1</label>
+                        <input type="number" class="form-control" min="0" max="17" value="0">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Components Demo -->
+    <!--     <div class="container my-5">
+        <h2 class="text-center mb-4">Bootstrap Components Demo</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Accordion</h4>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Hotel Amenities
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Enjoy free breakfast, WiFi, and fitness center access at our hotels.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Booking Policies
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Free cancellation up to 24 hours before check-in. No prepayment needed.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4>Progress Bar</h4>
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="75"
+                        aria-valuemin="0" aria-valuemax="100">75%</div>
+                </div>
+                <h4>Alert</h4>
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>Info!</strong> Your booking is almost complete.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <h4>Badge</h4>
+                <span class="badge bg-primary me-2">Primary</span>
+                <span class="badge bg-secondary me-2">Secondary</span>
+                <span class="badge bg-success">Success</span>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-12">
+                <h4>Toast Notification</h4>
+                <div class="toast-container position-static">
+                    <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">IHG</strong>
+                            <small>just now</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Welcome to IHG Hotels! Enjoy your stay.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <footer class="bg-dark text-light py-5 mt-5 footer">
+        <div class="container ">
+            <div class="row footer-container">
+                <div class="col-md-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Help Center</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Cancellation Options</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Safety Information</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Terms of Service</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Privacy Policy</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Cookie Policy</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light fs-4"><i class="uil uil-facebook-f"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="uil uil-twitter"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="uil uil-instagram"></i></a>
+                        <a href="#" class="text-light fs-4"><i class="uil uil-linkedin-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; <span id="year"></span> IHG. All rights reserved.</p>
+            </div>
+            <div class="text-center mt-3 back-to-top">
+                <a href="#top" class="btn">
+                    <i class="uil uil-arrow-up me-2"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
